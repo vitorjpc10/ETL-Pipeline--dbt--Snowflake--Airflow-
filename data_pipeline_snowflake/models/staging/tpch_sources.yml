@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: tpch
-    database: snowflake_data_sample
+    database: snowflake_sample_data
     schema: tpch_sf1
     tables:
       - name: orders
@@ -15,6 +15,6 @@ sources:
         columns:
           - name: l_orderkey
             tests:
-              - relationship:
+              - relationships:
                   to: source('tpch', 'orders')
                   field: o_orderkey
